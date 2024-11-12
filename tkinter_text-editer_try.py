@@ -1,14 +1,16 @@
 import tkinter as tk
 from tkinter.filedialog import askopenfilename, asksaveasfilename
 
-def open_file(): #Open files for editing
-    filepath = askopenfilename(
-        filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
-    )
-    if not filepath:
-        return
-    txt_edit.delete("1.0", tk.END)
-    with open(filepath, mode="r", encoding="utf-8") as input_file:
+class Word_Lite:
+    def __init__(self, window):
+    def open_file(): #Open files for editing
+        filepath = askopenfilename(
+            filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")]
+        )
+        if not filepath:
+            return
+        txt_edit.delete("1.0", tk.END)
+        with open(filepath, mode="r", encoding="utf-8") as input_file:
         text = input_file.read()
         txt_edit.insert(tk.END, text)
     window.title(f"Simple Text Editor - {filepath}")
