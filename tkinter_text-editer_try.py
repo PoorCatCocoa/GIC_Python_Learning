@@ -13,7 +13,7 @@ def open_file(): #Open files for editing
         txt_edit.insert(tk.END, text)
     window.title(f"Simple Text Editor - {filepath}")
 
-def save_file(): #Save AS the file.
+def save_file(): #Save AS the files.
     filepath = asksaveasfilename(
         defaultextension=".txt",
         filetypes=[("Text Files", "*.txt"), ("All Files", "*.*")],
